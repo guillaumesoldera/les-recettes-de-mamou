@@ -1,0 +1,11 @@
+{
+  "name": "les-recettes-de-mamou",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com-perso:guillaumesoldera/les-recettes-de-mamou.git",
+  "author": "Guillaume Soldera <guillaume.soldera@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "showdown": "^1.9.1"
+  }
+}
