@@ -17,19 +17,22 @@ exports.writeFile = (fileContent, path) => {
     fs.writeFileSync(path, fileContent);
 }
 
-exports.deleteDirectoryContent = (directory) => {
+exports.deleteDirectoryContent = (directory, finalCallback) => {
     this.forEachFile(directory, (directory, file) => {
-        fs.unlink(path.join(directory, file), err => {
+        fs.unlinkSync(path.join(directory, file), err => {
             if (err) throw err;
           });
-    })
+    }, finalCallback)
 }
 
-exports.forEachFile = (directory, callback) => {
+exports.forEachFile = (directory, callback, finalCallback) => {
     fs.readdir(directory, (err, files) => {
-        if (err) throw err;
-        for (const file of files) {
-          callback(directory, file)
-        }
-      });
+      if (err) throw err;
+      for (const file of files) {
+        callback(directory, file)
+      }
+      if (finalCallback) {
+        finalCallback()    
+      }
+    });
 }

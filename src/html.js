@@ -23,4 +23,17 @@ function generateRecipe(input, targetDirectory) {
     }
 }
 
+function generateIndex(recipesList, targetDirectory) {
+    console.log(recipesList);
+    const listAsHtml = recipesList.map(recipe => {
+        return `<li><a href="${recipe.finalPath.replace("docs", "")}" title="${recipe.title}">${recipe.title}</a>`
+    }).join("\n");
+    
+    const htmlTemplate = readFile('./src/template/index.html');
+    const element = htmlTemplate.replace("$$LISTE_RECETTES$$", listAsHtml);
+    const finalPath = `${targetDirectory}/index.html`;
+    writeFile(element, finalPath);
+}
+
 exports.generateRecipe = generateRecipe;
+exports.generateIndex = generateIndex;

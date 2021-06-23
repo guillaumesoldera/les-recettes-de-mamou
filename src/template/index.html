@@ -5,16 +5,21 @@
         <link rel="manifest" href="/manifest.json">
         <link rel="shortcut icon" href="/images/favicon.png">
         <link rel="stylesheet" href="/css/style.css">
-        <title>$$RECETTE_TITLE$$</title>
+        <title>Les Recettes de Mamou</title>
     </head>
     <body>
         <div class="background"></div>
-        <header class="header-recipe-wrapper">
-            <a href="/" title="Accueil"><img class="icon" src="/images/cook.svg" alt="Les Recettes de Mamou" >Les Recettes de Mamou</a>
+        <header class="header-wrapper">
+            <h1 class="header-title">
+                <a href="." title="Accueil" rel="home">Les Recettes de Mamou</a>
+            </h1>
+            <img class="header-avatar" src="/images/mamou-vignette.jpg" alt="Mamou" width="120px">
         </header>
-        <main class="main recipe">
-            <div class="notepad">
-            $$RECETTE_CONTENT$$
+        <main class="main">
+            <div class="summary">
+                <ul>
+                    $$LISTE_RECETTES$$
+                </ul>
             </div>
         </main>
         <footer>
