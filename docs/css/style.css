@@ -121,6 +121,7 @@ main {
     flex-direction: row;
     margin-bottom: calc(var(--size)/2);
     position: relative;
+    justify-content: center;
 }
 
 .header-recipe-wrapper a {
@@ -129,6 +130,7 @@ main {
     color: var(--text-color);
     display: flex;
     align-items: center;
+    font-size: 32px;
 }
 
 .main.recipe {
@@ -244,7 +246,13 @@ img.icon {
 }
 
 .ingredients {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
+}
+
+.ingredients p {
+    margin: 0;
+    padding: 0;
+    line-height: 32px;
 }
 
 .ingredients ul, .preparation ul {
@@ -254,11 +262,17 @@ img.icon {
 }
 
 .ingredients li, .preparation li {
-    line-height: 31px;
+    line-height: 32px;
+}
+
+.ingredients li p, .preparation li p {
+    margin: 0;
+    padding: 0;
+    line-height: 32px;
 }
 
 .preparation p {
     margin: 0;
     padding: 0;
-    line-height: 31px;
+    line-height: 32px;
 }
