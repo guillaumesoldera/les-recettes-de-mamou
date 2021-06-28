@@ -9,6 +9,8 @@ jobs:
     name: Build
     # This job runs on Linux
     runs-on: ubuntu-latest
+    env:
+      ROOT_PATH: /les-recettes-de-mamou
     steps:
     - uses: actions/checkout@v2
       with:
