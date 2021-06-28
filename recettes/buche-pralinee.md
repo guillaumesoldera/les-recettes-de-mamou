@@ -1,3 +1,8 @@
+---
+title: Bûche pralinée
+type: dessert
+---
+
 # Bûche pralinée
 
 <div class="ingredients" markdown="1">

@@ -3,7 +3,7 @@
     "short_name": "Les Recettes de Mamou",
     "icons": [
       {
-        "src": "images/favicon.ico",
+        "src": "images/icon-512x512.png",
         "sizes": "192x192",
         "type": "image/png"
       }

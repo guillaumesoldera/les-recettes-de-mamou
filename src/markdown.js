@@ -11,4 +11,6 @@ exports.converter = new showdown.Converter({
   ghMentions: true,
   emoji: true,
   ghMentionsLink: '/{u}',
+  noHeaderId: true,
+  metadata: true
 });

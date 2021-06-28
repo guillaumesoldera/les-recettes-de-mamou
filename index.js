@@ -9,7 +9,7 @@ deleteDirectoryContent('./docs/recettes', () => {
     forEachFile('./recettes', (directory, file) => {
         const input = `${directory}/${file}`
         const recipe = generateRecipe(input, 'docs/recettes');
-        console.log(recipe)
+        //console.log(recipe)
         allRecipes.push(recipe);
     }, () => {
         generateIndex(allRecipes, 'docs')

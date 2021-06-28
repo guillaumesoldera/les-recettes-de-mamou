@@ -2,29 +2,34 @@ const { readFile, writeFile } = require("./files");
 const { converter } = require("./markdown");
 
 function toSlug(title) {
-    return title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/"/g, "").replace(/'/g, "").toLowerCase().replace(/ /g, "-")
+    return title.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/"/g, "").replace(/'/g, "").replace(/\?/g, "").trim().toLowerCase().replace(/ /g, "-")
 }
 
 function generateRecipe(input, targetDirectory) {
     const fileContent = readFile(input);
     const htmlContent = converter.makeHtml(fileContent)
-    const indexH1 = htmlContent.indexOf("<h1");
-    const endH1 = htmlContent.indexOf(">", indexH1)
-    const title = htmlContent.substring(endH1 + 1, htmlContent.indexOf("</h1>"))
+    const metatdata = converter.getMetadata()
+    const title = metatdata.title;
+    const type = metatdata.type;
+    const typeLink = toSlug(type)
     const htmlTemplate = readFile('./src/template/recipe.html');
     const element = htmlTemplate
-        .replace("$$RECETTE_TITLE$$", title)
+        .replace("$$RECETTE_TYPELINK$$", typeLink)
+        .replace(/\$\$RECETTE_TYPE\$\$/g, type)
+        .replace(/\$\$RECETTE_TITLE\$\$/g, title)
         .replace("$$RECETTE_CONTENT$$", htmlContent)
     const finalPath = `${targetDirectory}/${toSlug(title)}.html`;
     writeFile(element, finalPath);
     return {
         title,
-        finalPath
+        finalPath,
+        type,
+        typeLink
     }
 }
 
 function generateIndex(recipesList, targetDirectory) {
-    console.log(recipesList);
+    //console.log(recipesList);
     const listAsHtml = recipesList.map(recipe => {
         return `<li><a href="${recipe.finalPath.replace("docs", "")}" title="${recipe.title}">${recipe.title}</a>`
     }).join("\n");

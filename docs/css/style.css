@@ -1,8 +1,11 @@
 :root {
     --primary-color: #5c6bc0;
-    --main-bg-color: #e8eaf6;
+    /*--main-bg-color: #e8eaf6;*/
+    --main-bg-color: #2a3244;
     --border-color: #c5cae9;
-    --text-color: #444444;
+    /*--text-color: #444444;*/
+    --text-color: #2a3244;
+    --text-header-color: #fff;
 }
 
 * {
@@ -60,13 +63,14 @@ header, main, footer {
     flex-direction: column;
     margin-bottom: calc(var(--size)/2);
     position: relative;
+    box-shadow: rgb(0 0 0 / 22%) 0px 2px 18px 0px;
 }
 
 .header-title {
     margin: 0 4rem;
 }
 .header-title a {
-    color: var(--text-color);
+    color: var(--text-header-color);
     display: block;
     font-size: 3rem;
     font-weight: 700;
@@ -122,12 +126,13 @@ main {
     margin-bottom: calc(var(--size)/2);
     position: relative;
     justify-content: center;
+    box-shadow: rgb(0 0 0 / 22%) 0px 2px 18px 0px;
 }
 
 .header-recipe-wrapper a {
     padding: 1rem;
     margin-left: 1rem;
-    color: var(--text-color);
+    color: var(--text-header-color);
     display: flex;
     align-items: center;
     font-size: 32px;
@@ -146,6 +151,7 @@ main {
 }
 
 footer {
+    color: var(--text-header-color);
     bottom: 0;
     width: 100%;
     font-family: Helvetica,Verdana, Geneva, Tahoma, sans-serif;
@@ -168,7 +174,7 @@ img.icon {
     text-align: right;
 }
 .credits a {
-    color: var(--text-color);
+    color: var(--text-header-color);
     text-decoration: none;
 }
 
