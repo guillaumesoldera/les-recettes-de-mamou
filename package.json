@@ -5,6 +5,9 @@
   "repository": "git@github.com-perso:guillaumesoldera/les-recettes-de-mamou.git",
   "author": "Guillaume Soldera <guillaume.soldera@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "node index.js"
+  },
   "dependencies": {
     "showdown": "^1.9.1"
   }
