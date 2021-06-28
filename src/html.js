@@ -45,5 +45,24 @@ function generateIndex(recipesList, targetDirectory) {
     writeFile(element, finalPath);
 }
 
+function generateManifest(targetDirectory) {
+    const manifestTemplate = readFile('./src/template/manifest.json');
+    const element = manifestTemplate
+        .replace(/\$\$ROOT_PATH\$\$/g, rootPath)
+    const finalPath = `${targetDirectory}/manifest.json`;
+    writeFile(element, finalPath);
+}
+
+function generateCSS(targetDirectory) {
+    const cssTemplate = readFile('./src/template/css/style.css');
+    const element = cssTemplate
+        .replace(/\$\$ROOT_PATH\$\$/g, rootPath)
+    const finalPath = `${targetDirectory}/css/style.css`;
+    writeFile(element, finalPath);
+}
+
+
 exports.generateRecipe = generateRecipe;
 exports.generateIndex = generateIndex;
+exports.generateManifest = generateManifest;
+exports.generateCSS = generateCSS;

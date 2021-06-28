@@ -1,5 +1,5 @@
 const { deleteDirectoryContent, forEachFile } = require("./src/files");
-const { generateRecipe, generateIndex } = require("./src/html");
+const { generateRecipe, generateIndex, generateCSS, generateManifest } = require("./src/html");
 
 
 const allRecipes = []
@@ -13,5 +13,7 @@ deleteDirectoryContent('./docs/recettes', () => {
         allRecipes.push(recipe);
     }, () => {
         generateIndex(allRecipes, 'docs')
+        generateCSS('docs');
+        generateManifest('docs');
     })
 })
