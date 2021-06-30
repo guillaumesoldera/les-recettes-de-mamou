@@ -3,24 +3,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
         <link rel="manifest" href="/manifest.json">
-        <link rel="shortcut icon" href="/images/favicon.png">
-        <link rel="stylesheet" href="/css/style.css">
-        <title>Les Recettes de Mamou</title>
+        <link rel="shortcut icon" href="$$ROOT_PATH$$/images/favicon.png">
+        <link rel="stylesheet" href="$$ROOT_PATH$$/css/style.css">
+        <title>$$PARTS_TITLE$$</title>
     </head>
     <body>
         <div class="background"></div>
-        <header class="header-wrapper">
-            <h1 class="header-title">
-                <a href="." title="Accueil" rel="home">Les Recettes de Mamou</a>
-            </h1>
-            <img class="header-avatar" src="/images/mamou-vignette.jpg" alt="Mamou" width="120px">
-        </header>
-        <main class="main home">
+        $$PARTS_HEADER$$
+        <main class="main home part">
             <div class="summary">
                 <ul>
-                    <li><a class="paper" href="/recettes/dessert" title="Dessert">Dessert</a></li>
-<li><a class="paper" href="/recettes/pate" title="Pâte">Pâte</a></li>
-<li><a class="paper" href="/recettes/plat" title="Plat">Plat</a></li>
+                    $$LISTE_RECETTES$$
                 </ul>
             </div>
         </main>

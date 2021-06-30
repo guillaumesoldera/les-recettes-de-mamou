@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const rimraf = require("rimraf");
 
 
 const cache = {};
@@ -14,15 +15,20 @@ exports.readFile = (path) => {
 }
 
 exports.writeFile = (fileContent, path) => {
-    fs.writeFileSync(path, fileContent);
+  const dir = path.substring(0, path.lastIndexOf("/"))
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
+  fs.writeFileSync(path, fileContent);
 }
 
 exports.deleteDirectoryContent = (directory, finalCallback) => {
-    this.forEachFile(directory, (directory, file) => {
-        fs.unlinkSync(path.join(directory, file), err => {
-            if (err) throw err;
-          });
-    }, finalCallback)
+  rimraf(directory, finalCallback);
+    //this.forEachFile(directory, (directory, file) => {
+    //    fs.unlinkSync(path.join(directory, file), err => {
+    //        if (err) throw err;
+    //      });
+    //}, finalCallback)
 }
 
 exports.forEachFile = (directory, callback, finalCallback) => {
@@ -35,4 +41,8 @@ exports.forEachFile = (directory, callback, finalCallback) => {
         finalCallback()    
       }
     });
+}
+
+exports.createDirSync = (directory) => {
+  fs.mkdirSync(directory);
 }

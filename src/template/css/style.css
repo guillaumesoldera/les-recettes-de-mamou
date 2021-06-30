@@ -12,6 +12,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Waiting for the Sunrise';
+    src: url('$$ROOT_PATH$$/fonts/WaitingfortheSunrise-Regular.ttf');
+  }
+
 html {
     font-size: calc(1em + .5vw);
     line-height: 1.5;
@@ -102,8 +107,8 @@ main {
 .summary {
     margin: 0 auto;
     margin-top: 50px;
-    min-width: 50%;
-    max-width: 1000px;
+    min-width: 65%;
+    max-width: 80%;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.5);
 }
@@ -125,8 +130,9 @@ main {
     flex-direction: row;
     margin-bottom: calc(var(--size)/2);
     position: relative;
-    justify-content: center;
+    justify-content: space-between;
     box-shadow: rgb(0 0 0 / 22%) 0px 2px 18px 0px;
+    padding: 0 50px;
 }
 
 .header-recipe-wrapper a {
@@ -136,6 +142,42 @@ main {
     display: flex;
     align-items: center;
     font-size: 32px;
+    text-decoration: none;
+    display: block;
+}
+
+.header-recipe-wrapper a.active::after {
+    text-decoration: underline;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 3px;
+    background: #fff;
+    margin: 1px auto 0;
+}
+
+.header-recipe-wrapper .menu {
+    display: flex;
+}
+
+.header-recipe-wrapper .menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    align-items: center;
+}
+
+.header-recipe-wrapper .menu ul li {
+    padding-left: 0;
+}
+
+.header-recipe-wrapper .menu ul li a {
+    margin-left: 0;
+    padding: 0 15px;
+    /*font-family: Helvetica,Verdana, Geneva, Tahoma, sans-serif;*/
+    font-size: 24px;
+    height: 40px;
 }
 
 .main.recipe {
@@ -282,3 +324,88 @@ img.icon {
     padding: 0;
     line-height: 32px;
 }
+
+.paper {
+    margin-top:50px;
+    line-height:1.5em;
+    background-image: -webkit-linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-image: -moz-linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-image: -ms-linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-size:100% 1.5em;
+    background-position:0 1.2em;
+    background-origin:content-box;
+    background-color:rgb(255 255 0);
+    font-size:140%;
+    padding:1.3em;
+    box-shadow:0px 0px 10px rgb(0 0 0 / 30%);
+    font-family: 'Waiting for the Sunrise', cursive;
+  }
+
+  
+
+  .home .summary {
+    background: none;
+  }
+
+  .home .summary ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .home .summary ul li a{
+      max-width: 30%;
+      margin: 1em;
+      transform: rotate(-6deg);
+      transition: transform .15s linear;
+      box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .home .summary ul li a {
+      text-decoration: none;
+  }
+
+  .home .summary ul li:nth-child(even) a{
+    transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background-color:#cfc;
+  }
+  .home .summary ul li:nth-child(3n) a{
+    transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background-color:#ccf;
+  }
+  .home .summary ul li:nth-child(5n) a{
+    transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+  }
+  
+  .home .summary ul li a:hover,ul li a:focus{
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.1);
+    position:relative;
+    z-index:5;
+  }
+
+  @media screen and (max-width:768px){
+    .paper {
+        padding: 0.3em;
+        margin: 0.7em;
+    }
+    .summary {
+        min-width: 80%;
+        max-width: 90%;
+    }
+  }
+
+  @media screen and (min-width:768px){
+      .paper {
+          min-width: 300px;
+      }
+  }

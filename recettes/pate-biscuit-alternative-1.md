@@ -1,5 +1,5 @@
 ---
-title: Pâte à biscuit (autre version)
+title: Pâte à biscuit 2
 type: pâte
 ---
 
