@@ -3,12 +3,12 @@
     "short_name": "Les Recettes de Mamou",
     "icons": [
       {
-        "src": "/les-recettes-de-mamou/images/icon-512x512.png",
+        "src": "/images/icon-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
       }
     ],
-    "start_url": "/les-recettes-de-mamou/index.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "theme_color": "#2a3244",
     "background_color": "#2a3244"

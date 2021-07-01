@@ -1,5 +1,8 @@
 :root {
-    --primary-color: #5c6bc0;
+    /*--primary-color: #5c6bc0;*/
+    --primary-color: #644571;
+    --secondary-color: #b74d79;
+    --tertiary-color: #f56756;
     /*--main-bg-color: #e8eaf6;*/
     --main-bg-color: #2a3244;
     --border-color: #c5cae9;
@@ -331,9 +334,9 @@ img.icon {
 .paper {
     margin-top:50px;
     line-height:1.5em;
-    background-image: -webkit-linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    /*background-image: -webkit-linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
     background-image: -moz-linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
-    background-image: -ms-linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);
+    background-image: -ms-linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px);*/
     background-size:100% 1.5em;
     background-position:0 1.2em;
     background-origin:content-box;
@@ -365,6 +368,8 @@ img.icon {
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #fff;
+      background-color: var(--primary-color);
   }
 
   .home .summary ul li a {
@@ -375,13 +380,15 @@ img.icon {
     transform:rotate(4deg);
     position:relative;
     top:5px;
-    background-color:#cfc;
+    /*background-color:#cfc;*/
+    background-color:var(--secondary-color);
   }
   .home .summary ul li:nth-child(3n) a{
     transform:rotate(-3deg);
     position:relative;
     top:-5px;
-    background-color:#ccf;
+    /*background-color:#ccf;*/
+    background-color:var(--tertiary-color);
   }
   .home .summary ul li:nth-child(5n) a{
     transform:rotate(5deg);
