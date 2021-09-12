@@ -9,11 +9,11 @@ type: pâte
 
 ## Ingrédients
  
- - 340g de farine
- - 8 morceaux de sucre
- - 5 1/2 cuilleréées d'eau
- - 160g de beurre
- - 1 cuillerée à café de levure mélangée à la farine
+ - 250g de farine
+ - 4 morceaux de sucre
+ - 4 cuilleréées à soupe d'eau
+ - 120g de beurre
+ - 1/2 paquet de levure
 
 </div>
 
@@ -23,8 +23,8 @@ type: pâte
 
 Mettre dans une casserole eau + sucre + beurre en morceaux.
 
-Mettre sur le feu, au premier bouillon, retirer et y jeter la farine, mélanger.
+Lorsque le mélange bout, verser la farine et la levure.
 
-Sans attendre, mettre dans le moule et étendre à la main.
+Retirer du feu, mettre dans le moule et étendre à la main.
 
 </div>
